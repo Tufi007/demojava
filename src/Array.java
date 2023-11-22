@@ -7,21 +7,40 @@ public class Array {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int arr[] = makeArray(n);
+        System.out.println("enetr the element to found");
+        int x = s.nextInt();
+        int f= find(arr, x, n);
+        System.out.println("the element was at these positions"+ f);
         // printSumArray(arr);
         // System.out.println(Array.arraysum(arr));
-        System.out.println("the ma value is"+' '+Array.max(arr));
+        // System.out.println("the max value is"+' '+Array.max(arr));
 
+    }
+    public static int find(int arr[], int x ,int n){
+        int pos=0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]==x) {
+                
+                pos= i;
+                
+            }
+           
+        }
+        return pos+1;
     }
 
     public static int max(int arr[]) {
-        int max = 0;
+        int max =Integer.MIN_VALUE;
+        if (arr.length!=0) {
+            
+        
         for (int i = 0; i < arr.length; i++) {
             int a = arr[i];
             if (a > max) {
                 max = a;
             }
 
-        }
+        }}
         return max;
     }
 
